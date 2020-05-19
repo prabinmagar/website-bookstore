@@ -1,0 +1,329 @@
+/*
+
+font-family: 'Hind', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Righteous', cursive;
+*/
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Hind', sans-serif;
+}
+
+/* some styling */
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+img{
+    width: 100%;
+}
+
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+li{
+    list-style: none;
+}
+
+/* header */
+
+header{
+    background: url("books-library-rows-banner.jpg") center/cover no-repeat;
+    padding: 20px;
+}
+
+header h1{
+    font-family: 'Righteous', cursive;
+    font-size: 50px;
+    font-weight: bold;
+    color: #1a1a1d;
+    background-color: whitesmoke;
+    padding: 20px 5px;
+    border-radius: 40px;
+    text-align: center;
+}
+
+header blockquote{
+    font-family: 'Poppins', sans-serif;
+    color: blanchedalmond;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    text-align: center;
+    padding-top: 10px;
+}
+
+/* navigation */
+
+.topnav{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.topnav a{
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    border: 3px solid #ececec;
+    width: 165px;
+    background: #222629;
+}
+
+.topnav a:hover{
+    background: #f2f2f2;
+    color: black;
+}
+
+/* main content */
+
+.column{
+    float: left;
+    padding: 10px;
+    background: snow;
+}
+
+.column.side{
+    width: 25%;
+    background: #222629;
+    color: white;
+    line-height: 24px;
+    text-align: center;
+}
+
+.column.middle{
+    width: 50%;
+    padding: 15px;
+    line-height: 28px;
+}
+
+/* left */
+
+.row .left-side h2{
+    padding: 20px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.bookGallery img{
+    height: 180px;
+    width: 140px;
+    display: block;
+    margin: 0 auto;
+}
+
+.bookGallery{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    /* same as 1fr 1fr */
+}
+
+.left-side p{
+    padding: 10px 0;
+}
+
+/** this button will be reused in other places also */
+.button{
+    color: white;
+    background-color: #4caf50;
+    text-align: center;
+    width: 100%;
+    font-family: 'Hind', sans-serif;
+    padding: 3px 8px;
+    border-radius: 2px;
+    transition: all 1.5s ease;
+}
+
+.button:hover{
+    background: white;
+    color: black;
+}
+
+/* middel */
+
+.column.middle h2{
+    text-align: center;
+    padding: 25px 0;
+    font-size: 40px;
+    line-height: 3rem;
+}
+
+/* right */
+
+.info{
+    margin: 0;
+    padding: 0;
+}
+
+.info h1{
+    font-size: 20px;
+}
+.column.side p{
+    padding: 10px;
+}
+
+input{
+    font-size: 16px;
+}
+input[type = "text"]{
+    height: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+input[type = "submit"]{
+    height: 30px;
+    margin-bottom: 10px;;
+    border: none;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    background: #4caf50;
+    border-radius: 2px;
+    padding: 3px 8px;
+}
+
+/* instead of doing this we can use our previous button styling */
+
+input[type = "submit"]:hover{
+    background: white;
+    color: black;
+}
+
+#email_box input{
+    padding: 5px;
+    width: 100%;
+}
+
+#email_box #submit_btn{
+    margin-top: 10px;
+}
+
+#email_box #submit_btn:hover{
+    background-color: greenyellow;
+}
+
+.free_books{
+    max-width: 90%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 6px white;
+}
+
+.free_books:hover{
+    cursor: pointer;
+}
+
+#about_free_books{
+    line-height: 20px;
+    text-align: center;
+    font-size: 13px;
+    background-color: white;
+    color: black;
+    padding: 2px;
+    border-radius: 10px;
+}
+
+/* footer */
+
+footer{
+    background: #222629;
+    border-top: 2px solid white;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    padding: 30px 10px;
+}
+
+footer h4{
+    text-decoration: underline;
+}
+
+footer a{
+    color: white;
+}
+footer a:hover{
+    color: #4caf50;
+}
+
+/* media queries */
+
+@media screen and (max-width: 1330px){
+    .bookGallery img{
+        width: 100px;
+        height: 110px;
+    }
+}
+
+@media screen and (max-width: 992px){
+    header h1{
+        font-size: 30px;
+    }
+    .bookGallery{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .column.side, .column.middle{
+        width: 100%;
+    }
+    .bookGallery{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .bookGallery img{
+        width: 100px;
+        height: 110px;
+        margin-bottom: 10px;
+    }
+
+    footer{
+        grid-template-columns: 1fr;
+    }
+    footer div{
+        padding: 18px 0;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .topnav{
+        flex-direction: column;
+    }
+    .topnav a{
+        width: 100%;
+        border: 1px solid white;
+        border-left: none;
+        border-right: none;
+    }
+
+    #email_box{
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    #search-box{
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Thank You for watching this video */
+
+/*Please subscribe to my channel */
